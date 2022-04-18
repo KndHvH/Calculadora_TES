@@ -32,7 +32,7 @@ lado = lado_tabela(estado,contribuinte)
 operacao = notas()
 
 
-tes = decisao(operacao,lado,ipi)
+tes = decisao(operacao,lado,ipi,fs,origem)
 
 print(tes)
 

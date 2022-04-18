@@ -33,14 +33,49 @@ def notas():
         "\nDigite o numero equivalente a operacao:\n" \
          ))
 
-def decisao(operacao,lado,ipi):
-    if operacao == 1:
-        return op1(lado,ipi)
+def decisao(operacao,lado,ipi,fs,origem):
+    count = 1
+    for iop in (op1,op2,op3,op4,op5,op6,op7,op8,op9):
+        if operacao == count:
+            return iop(lado,ipi,fs,origem)
+        else:
+            count += 1
+def op1(lado,ipi,fs,origem):
 
+    if lado == 'a':
+        if fs == 1 and origem == 6:
+            return 533
+        if fs == 2:
+            if ipi == 1:
+                return 565
+            else:
+                return 560
+        if ipi == 1:
+            return 501
+        else:
+            return 535
     else:
-        return 'ERROR'
+        if ipi == 1:
+            return 948
+        else:
+            return 947
 
-def op1(lado,ipi):
+def op2(lado,ipi):
+     return 527
+
+def op3(lado,ipi):
+    if lado == 'a':
+        if ipi == 1:
+            return 924
+        else:
+            return 925
+    else:
+        if ipi == 1:
+            return 951
+        else:
+            return 950
+
+def op4(lado,ipi):
     if lado == 'a':
         if ipi == 1:
             return 501
