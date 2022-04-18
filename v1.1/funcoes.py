@@ -40,6 +40,7 @@ def decisao(operacao,lado,ipi,fs,origem):
             return iop(lado,ipi,fs,origem)
         else:
             count += 1
+
 def op1(lado,ipi,fs,origem):
 
     if lado == 'a':
@@ -60,10 +61,10 @@ def op1(lado,ipi,fs,origem):
         else:
             return 947
 
-def op2(lado,ipi):
+def op2(lado,ipi,fs,origem):
      return 527
 
-def op3(lado,ipi):
+def op3(lado,ipi,fs,origem):
     if lado == 'a':
         if ipi == 1:
             return 924
@@ -75,7 +76,21 @@ def op3(lado,ipi):
         else:
             return 950
 
-def op4(lado,ipi):
+def op4(lado,ipi,fs,origem):
+    if ipi == 1:
+        return 505
+    else:
+        return 537
+
+def op5(lado,ipi,fs,origem):
+    if lado == 'a':
+        return 504
+    else:
+        return 949
+
+def op6(lado,ipi,fs,origem):
+
+    #ERRADO, PAREI AQUI::::::::
     if lado == 'a':
         if ipi == 1:
             return 501
