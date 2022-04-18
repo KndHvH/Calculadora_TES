@@ -14,7 +14,7 @@ if cpf == 0:
 
 
 origem = 1
-
+fs = 0
 if contribuinte == 1:
     # origem produto (1 ou 6)
     origem = int(input("Origem produto: "))
