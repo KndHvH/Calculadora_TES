@@ -16,10 +16,11 @@ origem = int(input("Origem: "))
 
 #chamando a funcao pra definir o lado da tabela
 lado = lado_tabela(estado,contribuinte)
-print(lado)
+
 
 #chamando a funcao pra definir tipo de operacao
 operacao = notas()
+
 
 tes = decisao(operacao,lado,ipi,origem)
 
