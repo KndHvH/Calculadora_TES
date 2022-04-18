@@ -1,8 +1,6 @@
 
 def lado_tabela(sp,contr):
-    if sp == 1:
-        return 'a'
-    if contr == 1:
+    if sp == 1 or contr == 1:
         return 'a'
     return 'b'
 
