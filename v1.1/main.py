@@ -1,10 +1,18 @@
 from funcoes import *
 
 #se é dentro do estado de SP (1 ou 0)
-estado = int(input("Estado: "))
+estado = int(input("É de SP?: "))
 
-#se é contribuinte ou não (1 ou 0)
-contribuinte = int(input("Contribuinte: "))
+#é pessoa fisica? (1 ou 0)
+cpf = int(input("tem CPF: "))
+
+contribuinte = 0
+
+if cpf == 0:
+    # se é contribuinte ou não (1 ou 0)
+    contribuinte = int(input("Contribuinte: "))
+
+
 origem = 1
 
 if contribuinte == 1:
@@ -15,10 +23,17 @@ if contribuinte == 1:
     fs = f()
 
 #produto com ou sem IPI (1 ou 0)
-ipi = int(input("IPI: "))
+ipi = int(input("Valor IPI: "))
+if ipi>0:
+    ipi = 1
 
 lado = lado_tabela(estado,contribuinte)
 
+operacao = notas()
 
+
+tes = decisao(operacao,lado,ipi)
+
+print(tes)
 
 
