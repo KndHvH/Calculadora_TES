@@ -109,7 +109,4 @@ def op7(lado, ipi, fs, origem, demonstracao):
 
 def op8(lado, ipi, fs, origem, demonstracao):
 
-    if demonstracao == 1:
-        return 955
-    else:
-        return 956
+def op9(lado, ipi, fs, origem, demonstracao):
