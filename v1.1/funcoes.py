@@ -1,9 +1,9 @@
 def f():
     #pergunta se é fapesp (1,0)
-    fapesp = int(input("Fapesp? "))
+    fapesp = int(input("O cliente é Fapesp? "))
     if fapesp == 0:
         # pergunta se é ffm (1,0)
-        ffm = int(input("Ffm? "))
+        ffm = int(input("O cliente é Fundação faculdade de medicina? "))
 
         if ffm==1:
             return 2
@@ -35,7 +35,7 @@ def notas():
 
 def decisao(operacao,lado,ipi,fs,origem):
     count = 1
-    for iop in (op1,op2,op3,op4): #,op5,op6,op7,op8,op9):
+    for iop in (op1,op2,op3,op4,op5,op6,op7,op8,op9):
         if operacao == count:
             return iop(lado,ipi,fs,origem)
         else:
@@ -66,6 +66,8 @@ def op2(lado,ipi,fs,origem):
 
 def op3(lado,ipi,fs,origem):
     if lado == 'a':
+        if fs == 2:
+            return 928
         if ipi == 1:
             return 924
         else:

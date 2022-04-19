@@ -1,5 +1,6 @@
 from funcoes import *
 
+print("------------------------------")
 print("Calculadora TES - ver 1.1")
 print("Digite 1 para respoder \"sim\"")
 print("Digite 0 para respoder \"nao\"")
@@ -23,9 +24,9 @@ fs = 0
 if contribuinte == 1:
     # origem produto (1 ou 6)
     origem = int(input("Digite a origem do produto (1/6): "))
-
-    #fapesp ou ffm (0,1,2) (nao,fapesp,ffm)
-    fs = f()
+    if estado == 1:
+        #fapesp ou ffm (0,1,2) (nao,fapesp,ffm)
+        fs = f()
 
 #produto com ou sem IPI (1 ou 0)
 ipi = int(input("Produto tem IPI?: "))
