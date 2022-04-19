@@ -33,19 +33,23 @@ def notas():
         "\nDigite o numero equivalente a operacao:\n" \
          ))
 
-def decisao(operacao,lado,ipi,fs,origem):
+def decisao(operacao,lado,ipi,fs,origem,demonstracao):
     count = 1
     for iop in (op1,op2,op3,op4,op5,op6,op7,op8,op9):
         if operacao == count:
-            return iop(lado,ipi,fs,origem)
+            return iop(lado,ipi,fs,origem,demonstracao)
         else:
             count += 1
 
-def op1(lado,ipi,fs,origem):
+def op1(lado,ipi,fs,origem,demonstracao):
 
     if lado == 'a':
         if fs == 1 and origem == 6:
-            return 533
+
+            if ipi == 1:
+                return 554
+            else:
+                return 533
         if fs == 2:
             if ipi == 1:
                 return 565
@@ -61,10 +65,10 @@ def op1(lado,ipi,fs,origem):
         else:
             return 947
 
-def op2(lado,ipi,fs,origem):
+def op2(lado,ipi,fs,origem,demonstracao):
      return 527
 
-def op3(lado,ipi,fs,origem):
+def op3(lado,ipi,fs,origem,demonstracao):
     if lado == 'a':
         if fs == 2:
             return 928
@@ -78,28 +82,34 @@ def op3(lado,ipi,fs,origem):
         else:
             return 950
 
-def op4(lado,ipi,fs,origem):
+def op4(lado,ipi,fs,origem,demonstracao):
     if ipi == 1:
         return 505
     else:
         return 537
 
-def op5(lado,ipi,fs,origem):
+def op5(lado,ipi,fs,origem,demonstracao):
     if lado == 'a':
         return 504
     else:
         return 949
 
-def op6(lado,ipi,fs,origem):
+def op6(lado,ipi,fs,origem,demonstracao):
 
-    #ERRADO, PAREI AQUI::::::::
-    if lado == 'a':
-        if ipi == 1:
-            return 501
+        if demonstracao == 1:
+            return 955
         else:
-            return 535
+            return 956
+
+
+def op7(lado, ipi, fs, origem, demonstracao):
+    if ipi == 0:
+        return 900
+
+
+def op8(lado, ipi, fs, origem, demonstracao):
+
+    if demonstracao == 1:
+        return 955
     else:
-        if ipi == 1:
-            return 948
-        else:
-            return 947
+        return 956

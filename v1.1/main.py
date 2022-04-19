@@ -40,8 +40,12 @@ diff = int(input("Operacao diferente de venda normal? "))
 if diff != 0:
     operacao = notas()
 
+demonstracao=0
+if operacao == 6:
+    demonstracao = int(input("Produto para demonstração em evento?: "))
 
-tes = decisao(operacao,lado,ipi,fs,origem)
+
+tes = decisao(operacao,lado,ipi,fs,origem,demonstracao)
 
 print("------------------------------")
 print("TES:",tes)
