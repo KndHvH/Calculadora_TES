@@ -103,10 +103,26 @@ def op6(lado,ipi,fs,origem,demonstracao):
 
 
 def op7(lado, ipi, fs, origem, demonstracao):
+    if fs==1 and origem==1:
+        return 544
+
     if ipi == 0:
+        if fs == 2 or (fs==1 and origem==6):
+            return 550
         return 900
+
+    else:
+        if fs == 2:
+            555
+        else:
+            544
 
 
 def op8(lado, ipi, fs, origem, demonstracao):
+    if ipi == 0:
+        return 540
+    else:
+        return 522
 
 def op9(lado, ipi, fs, origem, demonstracao):
+    return 521
