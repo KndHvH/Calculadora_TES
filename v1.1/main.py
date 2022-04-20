@@ -4,15 +4,32 @@ print("------------------------------")
 print("Calculadora TES - ver 1.1")
 print("Digite 1 para respoder \"sim\"")
 print("Digite 0 para respoder \"nao\"")
-x=1
-while x==1:
+
+while True:
     print("------------------------------")
 
+
     #se é dentro do estado de SP (1 ou 0)
-    estado = int(input("Cliente é de SP?: "))
+    while True:
+        estado = input("Cliente é de SP?: ")
+        x = loop(estado)
+        if x == 1:
+            estado = int(estado)
+            break
+        else:
+            print("Favor responder com 1 ou 0.")
 
     #é pessoa fisica? (1 ou 0)
-    cpf = int(input("É pessoa fisica?: "))
+    while True:
+        cpf = input("É pessoa fisica?: ")
+        x = loop(cpf)
+        if x == 1:
+            cpf = int(cpf)
+            break
+        else:
+            print("Favor responder com 1 ou 0.")
+
+
 
     contribuinte = 0
 
@@ -53,5 +70,7 @@ while x==1:
     print("TES:",tes)
     print("------------------------------")
     x = int(input("Deseja calcular novamente?: "))
+    if x != 1:
+        break
 
 

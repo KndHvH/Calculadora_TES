@@ -126,3 +126,9 @@ def op8(lado, ipi, fs, origem, demonstracao):
 
 def op9(lado, ipi, fs, origem, demonstracao):
     return 521
+
+def loop(x):
+    if x == '1' or x == '0':
+        return 1
+    else:
+        return 0
