@@ -1,9 +1,9 @@
 def f():
     #pergunta se é fapesp (1,0)
-    fapesp = int(input("O cliente é Fapesp? "))
+    fapesp = bool("O cliente é Fapesp? ")
     if fapesp == 0:
         # pergunta se é ffm (1,0)
-        ffm = int(input("O cliente é Fundação faculdade de medicina? "))
+        ffm = bool("O cliente é Fundação faculdade de medicina? ")
 
         if ffm==1:
             return 2
@@ -20,7 +20,7 @@ def lado_tabela(sp, contr):
 
 
 def notas():
-    return int(input(
+    return input(
         "<1> - Venda Normal\n" +
         "<2> - Amostra\n" +
         "<3> - Doação\n" +
@@ -31,13 +31,13 @@ def notas():
         "<8> - Venda por conta e ordem\n" +
         "<9> - Simples remessa" +
         "\nDigite o numero equivalente a operacao:\n" \
-         ))
+         )
 
 def decisao(operacao,lado,ipi,fs,origem,demonstracao):
     count = 1
-    for iop in (op1,op2,op3,op4,op5,op6,op7,op8,op9):
+    for opi in (op1,op2,op3,op4,op5,op6,op7,op8,op9):
         if operacao == count:
-            return iop(lado,ipi,fs,origem,demonstracao)
+            return opi(lado,ipi,fs,origem,demonstracao)
         else:
             count += 1
 
@@ -101,8 +101,7 @@ def op6(lado,ipi,fs,origem,demonstracao):
         else:
             return 956
 
-
-def op7(lado, ipi, fs, origem, demonstracao):
+def op7(lado,ipi,fs,origem,demonstracao):
     if fs==1 and origem==1:
         return 544
 
@@ -117,18 +116,23 @@ def op7(lado, ipi, fs, origem, demonstracao):
         else:
             544
 
-
-def op8(lado, ipi, fs, origem, demonstracao):
+def op8(lado,ipi,fs,origem,demonstracao):
     if ipi == 0:
         return 540
     else:
         return 522
 
-def op9(lado, ipi, fs, origem, demonstracao):
+def op9(lado,ipi,fs,origem,demonstracao):
     return 521
 
-def loop(x):
-    if x == '1' or x == '0':
-        return 1
-    else:
-        return 0
+
+def bool(text):
+    while True:
+        var = input(text)
+        if var == '1' or var == '0':
+            var = int(var)
+            break
+        else:
+            print("Favor responder com 1 ou 0.")
+    return var
+
