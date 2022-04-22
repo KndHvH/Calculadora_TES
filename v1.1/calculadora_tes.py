@@ -1,15 +1,14 @@
 from funcoes import *
-from termcolor import colored
 
 def main():
 
-    print(colored("------------------------------", 'red'))
-    print(colored("Calculadora TES - ver 1.1",'green'))
+    print("------------------------------")
+    print("Calculadora TES - ver 1.1")
     print("Digite 1 para respoder \"sim\"")
     print("Digite 0 para respoder \"nao\"")
 
     while True:
-        print(colored("------------------------------", 'red'))
+        print("------------------------------")
 
         estado = bool("Cliente é de SP?: ")
 
@@ -46,12 +45,17 @@ def main():
         diff = bool("Operacao diferente de venda normal? ")
         if diff != 0:
             while True:
-                operacao = notas()
-                #PAREI AQUI
-                if operacao.isnumeric():
-                    if operacao >= 1 and operacao <10:
+                try:
+                    operacao = notas()
+                    operacao = int(operacao)
+                    if operacao >= 1 and operacao < 10:
                         break
-                print("Favor responder com numeros entre 1 e 9.")
+                    else:
+                        print("Favor responder com numeros entre 1 e 9.")
+                except TypeError:
+                    print("Favor responder com numeros entre 1 e 9.")
+                except ValueError:
+                    print("Favor responder com numeros entre 1 e 9.")
 
 
         demonstracao=0
@@ -61,9 +65,9 @@ def main():
 
         tes = decisao(operacao,lado,ipi,fs,origem,demonstracao)
 
-        print(colored("------------------------------", 'red'))
-        print(colored(f"TES: {tes}",'red'))
-        print(colored("------------------------------", 'red'))
+        print("------------------------------")
+        print(f"TES: {tes}")
+        print("------------------------------")
         x = bool("Deseja calcular novamente?: ")
         if x != 1:
             break
