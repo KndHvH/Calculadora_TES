@@ -57,12 +57,6 @@ def main():
 
         tes = decisao(operacao,lado,ipi,fs,origem,demonstracao)
 
-        print("------------------------------")
-        print(f"TES: {tes}")
-        print("------------------------------")
-        x = bool("Deseja calcular novamente?: ")
-        if x != 1:
-            break
 
 
 if __name__ == "__main__":
