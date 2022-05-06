@@ -13,7 +13,7 @@ def main():
     st.header('Calculadora TES')
 
     opcoes = ['Selecione a Operação', "Venda Normal", "Amostra", "Doação", "Entrega futura de venda",
-              "Entrega futura Remessa", "Demonstração", "Saida Troca",
+              "Entrega futura remessa", "Demonstração", "Saida Troca",
               "Venda por conta e ordem", "Simples remessa"]
 
     checkbox = st.selectbox('', opcoes)
@@ -156,7 +156,7 @@ def numero_operacao(txt):
         x = 3
     elif txt == 'Entrega futura de venda':
         x = 4
-    elif txt == 'Entrega futura Remessa':
+    elif txt == 'Entrega futura remessa':
         x = 5
     elif txt == 'Demonstração':
         x = 6
