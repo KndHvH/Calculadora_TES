@@ -33,18 +33,12 @@ def main():
         elif operacao == 2:
             tes = 527
         else:
-            ipi = st.checkbox("Produto Com IPI", value=False, )
+            ipi = st.checkbox("Produto Com IPI", value=False)
 
             if operacao == 4:
-                if ipi:
-                    tes = 505
-                else:
-                    tes = 537
+                tes = op4(ipi)
             elif operacao == 8:
-                if ipi:
-                    tes = 522
-                else:
-                    tes = 540
+                tes = op8(ipi)
             else:
                 estado = st.checkbox("O cliente é de SP", value=False, )
 
@@ -58,10 +52,7 @@ def main():
                 lado = lado_tabela(estado, contribuinte)
 
                 if operacao == 5:
-                    if lado == 'a':
-                        tes = 504
-                    else:
-                        tes = 949
+                    tes = op5(lado)
                 else:
                     fund = 0
                     choice = 1
@@ -75,53 +66,11 @@ def main():
                         fund = fs(radio)
 
                     if operacao == 1:
-                        if lado == 'a':
-                            if fund == 1 and choice == 6:
-                                if ipi:
-                                    tes = 554
-                                else:
-                                    tes = 533
-                            elif fund == 2:
-                                if ipi:
-                                    tes = 565
-                                else:
-                                    tes = 560
-                            elif ipi:
-                                tes = 501
-                            else:
-                                tes = 535
-                        else:
-                            if ipi:
-                                tes = 948
-                            else:
-                                tes = 947
+                        tes = op1(fund,ipi,lado,choice)
                     elif operacao == 3:
-                        if lado == 'a':
-                            if fs == 2:
-                                tes = 928
-                            elif ipi:
-                                tes = 924
-                            else:
-                                tes = 925
-                        else:
-                            if ipi:
-                                tes = 951
-                            else:
-                                tes = 950
+                        tes = op3(fund,ipi,lado)
                     else:
-                        if fs == 1 and choice == 1:
-                            tes = 544
-
-                        if ipi == 0:
-                            if fs == 2 or (fs == 1 and choice == 6):
-                                tes = 550
-                            tes = 900
-
-                        else:
-                            if fs == 2:
-                                tes = 555
-                            else:
-                                tes = 544
+                        tes = op7(fund,choice,ipi)
 
         if st.button("Verificar"):
             b = f'TES: {tes}'
@@ -130,6 +79,75 @@ def main():
 
 
 # inicio funcoes calc tes
+
+def op4(ipi):
+    if ipi:
+        return 505
+    else:
+        return  537
+def op8(ipi):
+    if ipi:
+        return 522
+    else:
+        return 540
+
+def op5(lado):
+    if lado == 'a':
+        return 504
+    else:
+        return 949
+
+def op1(fund,ipi,lado,choice):
+    if lado == 'a':
+        if fund == 1 and choice == 6:
+            if ipi:
+                return 554
+            else:
+                return 533
+        elif fund == 2:
+            if ipi:
+                return 565
+            else:
+                return 560
+        elif ipi:
+            return 501
+        else:
+            return 535
+    else:
+        if ipi:
+            return 948
+        else:
+            return 947
+
+
+def op3(fund,ipi,lado):
+    if lado == 'a':
+        if fund == 2:
+            return 928
+        elif ipi:
+            return 924
+        else:
+            return 925
+    else:
+        if ipi:
+            return 951
+        else:
+            return 950
+
+def op7(fund,choice,ipi):
+    if fund == 1 and choice == 1:
+        return 544
+
+    if ipi:
+        if fund == 2 or (fund == 1 and choice == 6):
+            return 550
+        return 900
+
+    else:
+        if fund == 2:
+            return 555
+        else:
+            return 544
 
 def fs(radio):
     if radio == 'Fapesp':
