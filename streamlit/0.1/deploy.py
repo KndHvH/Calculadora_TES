@@ -1,7 +1,5 @@
 import streamlit as st
-import requests as req
-import re
-
+from pyngrok import ngrok
 
 def main():
     html_temp = """ <div style ="background-color:blue;padding:13px">
