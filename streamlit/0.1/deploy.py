@@ -57,8 +57,7 @@ def main():
                     fund = 0
                     choice = 1
                     if cnpj:
-                        choice = st.number_input('Digite a origem do Produto:', min_value=1, max_value=6, value=1,
-                                                 step=5)
+                        choice = st.radio('Origem Produto', (1,6), index=0)
                     if estado and cnpj:
                         options = ('Nenhum dos dois', 'Fapesp', 'FFM')
                         radio = st.radio('Cliente é Fapesp ou FFM?', options, index=0)
